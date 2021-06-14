@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-
+        SceneManager.LoadScene("SampleLevel");
     }
 
     public void Options()
