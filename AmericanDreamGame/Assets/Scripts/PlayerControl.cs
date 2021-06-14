@@ -4,19 +4,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour
 {
+    private void Start()
+    {
+        joystick = FindObjectOfType<Joystick>();
+        joystickButton = FindObjectOfType<JoystickButton>();
+
+        if (joystick == null || joystickButton == null)
+        {
+            Application.Quit(500);
+        }
+    }
+
     private void Update()
     {
-        var gamepad = Gamepad.current;
-        if (gamepad == null)
-        {
-            Debug.Log("No gamepad");
-            return;
-        }
-
-        if (!jumpInput && gamepad.buttonSouth.wasPressedThisFrame)
+        if (!jumpInput && joystickButton.IsPressed)
         {
             jumpInput = true;
-            Debug.Log("Works");
         }
     }
 
@@ -32,23 +35,15 @@ public class PlayerControl : MonoBehaviour
 
     private void DirectUpdate()
     {
-        var gamepad = Gamepad.current;
-        if (gamepad == null)
-        {
-            Debug.Log("No gamepad");
-            return;
-        }
+        var y = joystick.Horizontal;
 
-        var x = 0;
-        var y = gamepad.leftStick.x.ReadValue();
-
-        Transform camera = Camera.main.transform;
+        var cameraTransform = Camera.main.transform;
 
         currentX = 0;
         currentY = Mathf.Lerp(currentY, y, Time.deltaTime * interpolation);
 
-        Vector3 direction = camera.forward * currentX + camera.right * currentY;
-        float directionLength = direction.magnitude;
+        var direction = cameraTransform.forward * currentX + cameraTransform.right * currentY;
+        var directionLength = direction.magnitude;
         direction.y = 0;
         direction.z = 0;
         direction = direction.normalized * directionLength;
@@ -171,14 +166,13 @@ public class PlayerControl : MonoBehaviour
     }
 
     [SerializeField] private float moveSpeed = 2;
-    [SerializeField] private float turnSpeed = 200;
     [SerializeField] private float jumpForce = 4;
 
     [SerializeField] private Animator animator = null;
     [SerializeField] private Rigidbody rigidBody = null;
 
-    private float currentX = 0;
-    private float currentY = 0;
+    private float currentX;
+    private float currentY;
 
     private const float interpolation = 10;
 
@@ -192,4 +186,7 @@ public class PlayerControl : MonoBehaviour
     private bool isGrounded;
 
     private List<Collider> collisions = new List<Collider>();
+
+    private Joystick joystick;
+    private JoystickButton joystickButton;
 }
