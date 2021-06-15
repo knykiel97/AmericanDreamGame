@@ -8,16 +8,9 @@ public class CameraScript : MonoBehaviour
         var vec3 = transform.position;
         vec3.z = target.position.z - distance;
         vec3.x = target.position.x + 5f;
+        vec3.y = target.position.y;
 
         transform.position = vec3;
-    }
-
-    private void LateUpdate()
-    {
-        var camPos = Camera.main.transform.position;
-        camPos.y = cameraY;
-
-        Camera.main.transform.position = camPos;
     }
 
     [SerializeField] private Transform target;
