@@ -18,8 +18,11 @@ public class DollarPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        ScoringSystem.Score += starScore;
-        transform.position = new Vector3(0, 1000, 0);
+        if (col.gameObject.tag == "Player")
+        {
+            ScoringSystem.Score += starScore;
+            transform.position = new Vector3(0, 1000, 0);
+        }
     }
 
     private int starScore = 5;
