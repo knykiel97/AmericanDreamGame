@@ -8,7 +8,7 @@ public class LevelExit : MonoBehaviour
         if (!col.gameObject.CompareTag("Player")) return;
 
         ScoringSystem.Score = 0;
-        PlayerLifes.Lifes = 0;
+        PlayerLifes.Lifes = 3;
         SceneManager.LoadScene("LevelSelector");
     }
 }

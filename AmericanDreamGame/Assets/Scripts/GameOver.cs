@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     private void Start()
     {
         ScoringSystem.Score = 0;
+        PlayerLifes.Lifes = 3;
         StartCoroutine(BackToMainMenu());
     }
 
