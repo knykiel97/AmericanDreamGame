@@ -4,9 +4,9 @@ public class Enemy : MonoBehaviour
 {
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
-            PlayerLives.Lifes--;
+            PlayerLifes.Lifes--;
         }
     }
 }

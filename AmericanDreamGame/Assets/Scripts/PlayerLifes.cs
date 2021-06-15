@@ -1,9 +1,8 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerLives : MonoBehaviour
+public class PlayerLifes : MonoBehaviour
 {
     // Update is called once per frame
     void Update()
@@ -22,5 +21,5 @@ public class PlayerLives : MonoBehaviour
     }
 
     [SerializeField] private GameObject lifeTextBox;
-    [SerializeField] public static int Lifes = 3;
+    public static int Lifes = 3;
 }

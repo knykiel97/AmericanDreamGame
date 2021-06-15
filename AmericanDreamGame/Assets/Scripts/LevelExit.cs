@@ -5,9 +5,10 @@ public class LevelExit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene("LevelSelector");
-        }
+        if (!col.gameObject.CompareTag("Player")) return;
+
+        ScoringSystem.Score = 0;
+        PlayerLifes.Lifes = 0;
+        SceneManager.LoadScene("LevelSelector");
     }
 }

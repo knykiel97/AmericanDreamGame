@@ -1,22 +1,15 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoringSystem : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        InvokeRepeating("updateText", 1f, 0.1f);
+        InvokeRepeating("UpdateText", 1f, 0.1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void updateText()
+    private void UpdateText()
     {
         scoreDisplay.GetComponent<Text>().text = "Score: " + Score;
     }

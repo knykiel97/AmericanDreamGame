@@ -1,9 +1,5 @@
-using TMPro;
-using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.Layouts;
-using UnityEngine.InputSystem.OnScreen;
 
 public class JoystickButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
