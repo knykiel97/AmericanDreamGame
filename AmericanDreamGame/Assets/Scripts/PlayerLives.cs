@@ -16,10 +16,9 @@ public class PlayerLives : MonoBehaviour
         }
     }
 
-    private IEnumerator GameOverScene()
+    private void GameOverScene()
     {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GameOver");
     }
 
     [SerializeField] private GameObject lifeTextBox;

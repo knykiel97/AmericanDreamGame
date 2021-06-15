@@ -4,9 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
-    private IEnumerator OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GameOver");
     }
 }
