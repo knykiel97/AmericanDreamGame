@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * After death clear-up variables and after 5 seconds switch to MainMenu.
+ */
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update

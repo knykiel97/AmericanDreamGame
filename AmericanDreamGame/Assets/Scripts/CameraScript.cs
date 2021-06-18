@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/*
+ * Script makes camera follow @target
+ */
 public class CameraScript : MonoBehaviour
 {
     // Update is called once per frame

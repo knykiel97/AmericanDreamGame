@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*
+ * Manages Options scene
+ */
 public class Options : MonoBehaviour
 {
     private Text languageText;

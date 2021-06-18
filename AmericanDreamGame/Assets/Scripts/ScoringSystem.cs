@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Stores current score and updates corresponding GUI element
+ */
 public class ScoringSystem : MonoBehaviour
 {
     // Start is called before the first frame update

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Manages LevelSelector scene
+ */
 public class LevelSelector : MonoBehaviour
 {
     public void DemoLevel()

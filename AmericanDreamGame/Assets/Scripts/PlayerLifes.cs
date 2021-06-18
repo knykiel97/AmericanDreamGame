@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*
+ * Stores player lifes, updates corresponding GUI element and if player die, switch to GameOver scene
+ */
 public class PlayerLifes : MonoBehaviour
 {
     // Update is called once per frame

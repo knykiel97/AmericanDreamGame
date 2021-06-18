@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Switches to Level Selector if player go through door
+ */
 public class LevelExit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider col)

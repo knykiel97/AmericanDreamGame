@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/*
+ * Add points if player collide with dollar
+ */
 public class DollarPickup : MonoBehaviour
 {
     private void OnTriggerEnter(Collider col)

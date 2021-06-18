@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Manages MainMenu scene
+ */
 public class MainMenu : MonoBehaviour
 {
     public void PlayGame()

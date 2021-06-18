@@ -1,8 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Controls player movement
+ * Based on sample script from asset with little modifications
+ */
 public class PlayerControl : MonoBehaviour
 {
+    // Start is called before the first frame update
     private void Start()
     {
         joystick = FindObjectOfType<Joystick>();
@@ -14,6 +19,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     private void Update()
     {
         if (!jumpInput && joystickButton.IsPressed)
@@ -52,7 +58,7 @@ public class PlayerControl : MonoBehaviour
             currentDirection = Vector3.Slerp(currentDirection, direction, Time.deltaTime * interpolation);
             transform.rotation = Quaternion.LookRotation(currentDirection);
             var vec = currentDirection * moveSpeed * Time.deltaTime;
-            vec.z = 0;
+            vec.z = 0;  // blocks moving in z axis due to animation slightly moves character and after few turnarounds character fall
             transform.position += vec;
 
             animator.SetFloat("MoveSpeed", directionLength);
